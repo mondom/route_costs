@@ -29,9 +29,6 @@ body {
 	flex-direction: column;
 	height: 200px;
 	color: rgb(255, 255, 255);
-	
-	
-    
 }
 .shadow {
 	position: absolute;
@@ -40,16 +37,37 @@ body {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 h1 {
+	position: relative;
 	letter-spacing: 5px;
 	font-size: 40px;
 	font-style: italic;
 }
+
+h1::after,
+h1::before {
+	position: absolute;
+	content: '';
+	width: 60px;
+	height: 1px;
+	background-color: #fff;
+	bottom: 25px;
+	z-index: 1;
+}
+
+h1::after {
+	right: -100px;
+}
+
+h1::before {
+	left: -100px;
+}
+
 h1,
 p {
 	z-index: 1;
 }
 
-p {
+.top p {
 	position: relative;
 	margin-top: 15px;
 }
@@ -64,13 +82,11 @@ p::after {
 	z-index: 1;
 }
 
-
 .bottom {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 40px;
-
 }
 
 label {
@@ -83,28 +99,44 @@ input {
 	font-size: 22px;
 	margin-bottom: 40px;
 	width: 70%;
+	padding: 7px;
 	border-radius: 5px;
-	border: 1px solid rgb(185, 185, 185);
 	z-index: 1;
 }
 
 .count {
+	position: relative;
+	margin: 50px 0 20px;
 	padding: 18px 10px;
-	width: 55%;
+	width: 50%;
 	font-size: 24px;
-	border-radius: 4px;
+	border-radius: 3px;
 	color: #fff;
-	background-color: #cc8100;
-	border: none;
+	background: transparent;
+	border: 2px double #fff;
 	cursor: pointer;
-	transition: background-color 0.3s;
+	transition: background-color, border, color 0.3s;
 	z-index: 1;
-	margin-bottom: 20px;
+	
+}
+
+.count::after {
+	position: absolute;
+	content: '';
+	width: 1px;
+	height: 50px;
+	background-color: #fff;
+	top: -70px;
+	left: 50%;
+	z-index: 1;
 }
 
 .count:hover {
-	background-color: #a26906;
+	background-color: #f2e452;
+	border: 2px solid transparent;
+	color: black;
 }
+
 
 .cost-info {
 	display: none;
@@ -114,10 +146,11 @@ input {
 
 .cost {
 	font-weight: bold;
+	padding: 0 6px;
 }
 
 .error {
 	font-size: 18px;
-	color: rgb(237, 181, 97);
+	color: #f2e452;
 	text-align: center;
 }
