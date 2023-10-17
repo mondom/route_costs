@@ -8,13 +8,14 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
+	max-height: 100vh;
 	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
 	position: relative;
 	width: 600px;
+	margin: 50px 0;
 	box-shadow: 0 0 10px #0b0b0b;
 	background-image: url('./img/porsche.jpg');
 	background-size: cover;
