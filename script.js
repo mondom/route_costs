@@ -6,8 +6,6 @@ const error = document.querySelector('.error')
 const costInfo = document.querySelector('.cost-info')
 const spanCost = document.querySelector('.cost')
 
-
-
 const dataCheck = () => {
 	if (priceInput.value === ''|| combustionInput.value === '' || routeInput.value === '') {
 		error.textContent = 'Uzupełnij wszystkie pola!'
