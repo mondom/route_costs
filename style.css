@@ -138,6 +138,9 @@ input {
 	border: 2px solid transparent;
 	color: black;
 }
+/* .count:hover::after {
+	background-color: #f2e452;
+} */
 
 
 .cost-info {
