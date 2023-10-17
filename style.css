@@ -117,7 +117,7 @@ input {
 	background: transparent;
 	border: 2px double #fff;
 	cursor: pointer;
-	transition: background-color, border, color 0.3s;
+	transition: border, color 0.3s;
 	z-index: 1;
 	
 }
@@ -126,7 +126,7 @@ input {
 	position: absolute;
 	content: '';
 	width: 1px;
-	height: 50px;
+	height: 45px;
 	background-color: #fff;
 	top: -70px;
 	left: 50%;
@@ -134,9 +134,8 @@ input {
 }
 
 .count:hover {
-	background-color: #f2e452;
-	border: 2px solid transparent;
-	color: black;
+	color: #f2e452;
+	border: 2px solid #f2e452;
 }
 /* .count:hover::after {
 	background-color: #f2e452;
