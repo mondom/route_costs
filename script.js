@@ -7,13 +7,12 @@ const costInfo = document.querySelector('.cost-info')
 const spanCost = document.querySelector('.cost')
 
 const dataCheck = () => {
-	if (priceInput.value === ''|| combustionInput.value === '' || routeInput.value === '') {
+	if (priceInput.value === '' || combustionInput.value === '' || routeInput.value === '') {
 		error.textContent = 'Uzupełnij wszystkie pola!'
-        costInfo.style.display = 'none'
+		costInfo.style.display = 'none'
 	} else {
 		costCalculation()
-		costInfo.style.display = 'flex'
-        error.textContent = ''
+		error.textContent = ''
 	}
 }
 
@@ -24,8 +23,17 @@ const costCalculation = () => {
 
 	const cost = (routeLength / (100 / averageCombustion)) * petrolPrice
 	spanCost.textContent = cost.toFixed(2)
+	costInfo.style.display = 'flex'
 }
 
-
+const enterKeyCheck = e => {
+	if (e.key === 'Enter') {
+		costCalculation()
+		dataCheck()
+	}
+}
 
 countBtn.addEventListener('click', dataCheck)
+routeInput.addEventListener('keyup', enterKeyCheck)
+priceInput.addEventListener('keyup', enterKeyCheck)
+combustionInput.addEventListener('keyup', enterKeyCheck)
